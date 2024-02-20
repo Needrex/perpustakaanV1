@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Feb 2024 pada 02.40
+-- Waktu pembuatan: 20 Feb 2024 pada 07.45
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -68,12 +68,12 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`cover`, `id_buku`, `kategori`, `judul`, `pengarang`, `penerbit`, `tahun_terbit`, `jumlah_halaman`, `buku_deskripsi`, `isi_buku`) VALUES
-('65cda6f93a6cf.jpeg', 'Zz01', 'informatika', 'Informatika', 'Regatama', 'Regatama', '2023-02-15', 220, 'Buku untuk mengetahui tentang komputer lebih dalam', 'Informatika-BS-KLS-X.pdf'),
-('65cda7a32b697.jpeg', 'Zz02', 'novel', 'Perahu Kertas', 'Rega', 'Rega', '2023-02-28', 200, 'Perahu kertas', 'Perahu_Kertas.pdf'),
-('65cda825bbedb.jpeg', 'Zz03', 'novel', 'Berjuta Rasa', 'Rega', 'Rega', '2020-02-15', 100, 'Berjuta-juta rasa', '[www.gudangebook.store] TERE LIYE - BERJUTA RASANYA.pdf'),
-('65cda925ce7bd.jpeg', 'Zz04', 'filsafat', 'Filsafat ilmu', 'Zaenal', 'Rega', '2023-02-15', 50, 'Ilmu menanyakan pertanyaan', 'Buku-Filsafat-Manusia-Memahami-Manusia-Melalui-Filsafat.pdf'),
-('65cda9bedec8a.jpeg', 'Zz05', 'filsafat', 'Pengantar filsafat', 'Rega', 'Rega', '2020-02-15', 100, 'Awal mulai filsafat', 'Pengantar Filsafat All-70.pdf'),
-('65cdaa2c78ff9.jpeg', 'Zz06', 'bisnis', 'Pengantar bisnis', 'Rega', 'Rega', '2016-02-15', 105, 'Mengantarkan anda ke dunia bisnis', 'HadionWijoyodkk-PengantarBisnis.pdf');
+('65cda6f93a6cf.jpeg', 'ZID0002', 'informatika', 'Informatika', 'Regatama', 'Regatama', '2023-02-15', 220, 'Buku untuk mengetahui tentang komputer lebih dalam', 'Informatika-BS-KLS-X.pdf'),
+('65cda7a32b697.jpeg', 'ZID0003', 'novel', 'Perahu Kertas', 'Rega', 'Rega', '2023-02-28', 200, 'Perahu kertas', 'Perahu_Kertas.pdf'),
+('65cda825bbedb.jpeg', 'ZID0004', 'novel', 'Berjuta Rasa', 'Rega', 'Rega', '2020-02-15', 100, 'Berjuta-juta rasa', '[www.gudangebook.store] TERE LIYE - BERJUTA RASANYA.pdf'),
+('65cda925ce7bd.jpeg', 'ZID0005', 'filsafat', 'Filsafat ilmu', 'Zaenal', 'Rega', '2023-02-15', 50, 'Ilmu menanyakan pertanyaan', 'Buku-Filsafat-Manusia-Memahami-Manusia-Melalui-Filsafat.pdf'),
+('65cda9bedec8a.jpeg', 'ZID0006', 'filsafat', 'Pengantar filsafat', 'Rega', 'Rega', '2020-02-15', 100, 'Awal mulai filsafat', 'Pengantar Filsafat All-70.pdf'),
+('65cdaa2c78ff9.jpeg', 'ZID0007', 'bisnis', 'Pengantar bisnis', 'Rega', 'Rega', '2016-02-15', 105, 'Mengantarkan anda ke dunia bisnis', 'HadionWijoyodkk-PengantarBisnis.pdf');
 
 -- --------------------------------------------------------
 
