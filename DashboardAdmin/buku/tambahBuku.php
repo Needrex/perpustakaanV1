@@ -14,6 +14,13 @@ if (isset($_POST["tambah"])) {
     </script>";
    }
 }
+ $query = mysqli_query($connection, "SELECT max(id_buku) as kodeTerbesar FROM buku");
+$dataid = mysqli_fetch_array($query);
+$kodebuku = $dataid['kodeTerbesar'];
+$urutan = (int) substr($kodebuku, -4, 4);
+$urutan++;
+$huruf = "ZID";
+$kodebuku = $huruf . sprintf("%04s", $urutan);  
 ?>
 
 <!DOCTYPE html>
@@ -72,8 +79,8 @@ if (isset($_POST["tambah"])) {
 
                <div class="mb-3">
                   <label for="exampleFormControlInput1" class="form-label">Id Buku</label>
-                  <input type="text" class="form-control" name="id_buku" id="exampleFormControlInput1"
-                     placeholder="example zz01" required>
+                  <input type="text" class="form-control" name="id_buku" value="<?php echo $kodebuku ?>" readonly
+                     style=" background-color: #3333335b ;" required>
                </div>
             </div>
 
