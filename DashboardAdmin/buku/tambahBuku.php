@@ -14,13 +14,13 @@ if (isset($_POST["tambah"])) {
     </script>";
    }
 }
- $query = mysqli_query($connection, "SELECT max(id_buku) as kodeTerbesar FROM buku");
+$query = mysqli_query($connection, "SELECT max(id_buku) as kodeTerbesar FROM buku");
 $dataid = mysqli_fetch_array($query);
 $kodebuku = $dataid['kodeTerbesar'];
 $urutan = (int) substr($kodebuku, -4, 4);
 $urutan++;
 $huruf = "ZID";
-$kodebuku = $huruf . sprintf("%04s", $urutan);  
+$kodebuku = $huruf . sprintf("%04s", $urutan);
 ?>
 
 <!DOCTYPE html>
@@ -29,8 +29,7 @@ $kodebuku = $huruf . sprintf("%04s", $urutan);
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link href="../../assets/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
    <script src="https://kit.fontawesome.com/de8de52639.js" crossorigin="anonymous"></script>
    <title>Tambah buku || Admin</title>
 </head>

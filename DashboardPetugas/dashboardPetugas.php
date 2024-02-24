@@ -21,7 +21,7 @@ if (isset($_SESSION['role'])) {
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link href="../assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
    <script src="https://kit.fontawesome.com/de8de52639.js" crossorigin="anonymous"></script>
    <title>Admin Dashboard</title>
 </head>
@@ -45,15 +45,18 @@ if (isset($_SESSION['role'])) {
                   </a>
                </li>
                <li>
-                  <a class="dropdown-item text-center text-secondary" href="#"> <span class="text-capitalize"><?php echo $_SESSION['admin']['nama_admin']; ?></a>
+                  <a class="dropdown-item text-center text-secondary" href="#"> <span
+                        class="text-capitalize"><?php echo $_SESSION['admin']['nama_admin']; ?></a>
                   </span>
                </li>
                <hr>
                <li>
-                  <a class="dropdown-item text-center mb-2" href="#">Akun Terverifikasi <span class="text-primary"><i class="fa-solid fa-circle-check"></i></span></a>
+                  <a class="dropdown-item text-center mb-2" href="#">Akun Terverifikasi <span class="text-primary"><i
+                           class="fa-solid fa-circle-check"></i></span></a>
                </li>
                <li>
-                  <a class="dropdown-item text-center p-2 bg-danger text-light rounded" href="signOut.php">Sign Out <i class="fa-solid fa-right-to-bracket"></i></a>
+                  <a class="dropdown-item text-center p-2 bg-danger text-light rounded" href="signOut.php">Sign Out <i
+                        class="fa-solid fa-right-to-bracket"></i></a>
                </li>
             </ul>
          </div>
@@ -77,7 +80,8 @@ if (isset($_SESSION['role'])) {
       <h1 class="mt-5 fw-bold">Dashboard - <span class="fs-4 text-secondary">
             <?php echo $day . " " . $dayOfMonth . " " . " " . $month . " " . $year; ?> </span></h1>
 
-      <div class="alert alert-success" role="alert">Selamat datang admin - <span class="fw-bold text-capitalize"><?php echo $_SESSION['admin']['nama_admin']; ?></span> di Dashboard
+      <div class="alert alert-success" role="alert">Selamat datang admin - <span
+            class="fw-bold text-capitalize"><?php echo $_SESSION['admin']['nama_admin']; ?></span> di Dashboard
          NeedPerpus</div>
 
       <div class="mt-4 p-3">
@@ -107,12 +111,14 @@ if (isset($_SESSION['role'])) {
          <div class="d-flex flex-wrap justify-content-center gap-2">
             <div class="cardImg">
                <a href="peminjaman/peminjamanBuku.php">
-                  <img src="../assets/dashboardCardMember/peminjaman.png" alt="daftar buku" style="max-width: 100%;" width="600px">
+                  <img src="../assets/dashboardCardMember/peminjaman.png" alt="daftar buku" style="max-width: 100%;"
+                     width="600px">
                </a>
             </div>
             <div class="cardImg">
                <a href="pengembalian/pengembalianBuku.php">
-                  <img src="../assets/dashboardCardMember/pengembalianAdmin.png" alt="daftar buku" style="max-width: 100%;" width="600px">
+                  <img src="../assets/dashboardCardMember/pengembalianAdmin.png" alt="daftar buku"
+                     style="max-width: 100%;" width="600px">
                </a>
             </div>
 
@@ -130,7 +136,8 @@ if (isset($_SESSION['role'])) {
       </div>
    </footer>
 
-   <script src="../assets/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+   <script src="../assets/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
    </script>
 </body>
 

@@ -40,56 +40,56 @@ if (isset($_POST["sains"])) {
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
    <script src="https://kit.fontawesome.com/de8de52639.js" crossorigin="anonymous"></script>
    <title>Daftar Buku || Member</title>
 </head>
 <style>
-   .layout-card-custom {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-   }
+.layout-card-custom {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 1.5rem;
+}
 
-   body {
-      box-sizing: border-box;
-   }
+body {
+   box-sizing: border-box;
+}
 
+.kategori {
+   margin: 2% auto;
+   display: flex;
+   justify-content: space-evenly;
+   text-align: center;
+
+}
+
+.item-kategori label {
+   margin-bottom: 5%;
+}
+
+.item-kategori label img {
+   width: 40%;
+
+}
+
+.container {
+   margin: 1% auto;
+}
+
+@media only screen and (max-width: 412px) {
    .kategori {
-      margin: 2% auto;
-      display: flex;
+      flex-wrap: wrap;
       justify-content: space-evenly;
-      text-align: center;
-
-   }
-
-   .item-kategori label {
       margin-bottom: 5%;
    }
 
-   .item-kategori label img {
-      width: 40%;
+   .item-kategori {
+      width: 35%;
 
    }
 
-   .container {
-      margin: 1% auto;
-   }
-
-   @media only screen and (max-width: 412px) {
-      .kategori {
-         flex-wrap: wrap;
-         justify-content: space-evenly;
-         margin-bottom: 5%;
-      }
-
-      .item-kategori {
-         width: 35%;
-
-      }
-
-   }
+}
 </style>
 
 <body>
@@ -116,11 +116,13 @@ if (isset($_POST["sains"])) {
                <img src="../../assets/NeedPerpus Public Library.png" class="d-block w-100" alt="...">
             </div>
          </div>
-         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching"
+            data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
          </button>
-         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching"
+            data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
          </button>
@@ -129,32 +131,42 @@ if (isset($_POST["sains"])) {
       <form action="" method="post">
          <div class="input-group d-flex justify-content-center p-5">
 
-            <input type="text" class="form-control" type="text" name="keyword" id="keyword" placeholder="cari judul atau kategori...">
+            <input type="text" class="form-control" type="text" name="keyword" id="keyword"
+               placeholder="cari judul atau kategori...">
 
-            <button class="border border-start-3 bg-outline-primary rounded rounded-start-0" type="submit" name="search"><i class="bi bi-search"><img src="../../assets/icon kategori/search (3).svg" alt="" srcset=""></i></button>
+            <button class="border border-start-3 bg-outline-primary rounded rounded-start-0" type="submit"
+               name="search"><i class="bi bi-search"><img src="../../assets/icon kategori/search (3).svg" alt=""
+                     srcset=""></i></button>
          </div>
       </form>
 
       <form action="" method="post" class="kategori">
          <i class="item-kategori">
 
-            <label for="semua"><img src="../../assets/icon kategori/Desain_tanpa_judul__2_-removebg-preview (1).png" alt="" class="rounded"></label>
+            <label for="semua"><img src="../../assets/icon kategori/Desain_tanpa_judul__2_-removebg-preview (1).png"
+                  alt="" class="rounded"></label>
             <button id="semua" class="btn btn-outline-primary" type="submit">Semua</button>
          </i>
          <i class="item-kategori">
-            <label for="informatika"><img src="../../assets/icon kategori/Desain_tanpa_judul__3_-removebg-preview.png" alt="" class="rounded"></label>
-            <button type="submit" id="informatika" name="informatika" class="btn btn-outline-primary">Informatika</button>
+            <label for="informatika"><img src="../../assets/icon kategori/Desain_tanpa_judul__3_-removebg-preview.png"
+                  alt="" class="rounded"></label>
+            <button type="submit" id="informatika" name="informatika"
+               class="btn btn-outline-primary">Informatika</button>
          </i><i class="item-kategori">
-            <label for="bisnis"><img src="../../assets/icon kategori/Desain_tanpa_judul__4_-removebg-preview.png" alt="" class="rounded"></label>
+            <label for="bisnis"><img src="../../assets/icon kategori/Desain_tanpa_judul__4_-removebg-preview.png" alt=""
+                  class="rounded"></label>
             <button type="submit" id="bisnis" name="bisnis" class="btn btn-outline-primary">Bisnis</button>
          </i><i class="item-kategori">
-            <label for="filsafat"><img src="../../assets/icon kategori/Desain_tanpa_judul__6_-removebg-preview.png" alt="" class="rounded"></label>
+            <label for="filsafat"><img src="../../assets/icon kategori/Desain_tanpa_judul__6_-removebg-preview.png"
+                  alt="" class="rounded"></label>
             <button type="submit" id="filsafat" name="filsafat" class="btn btn-outline-primary">Filsafat</button>
          </i><i class="item-kategori">
-            <label for="novel"><img src="../../assets/icon kategori/Desain_tanpa_judul__4_-removebg-preview.png" alt="" class="rounded"></label>
+            <label for="novel"><img src="../../assets/icon kategori/Desain_tanpa_judul__4_-removebg-preview.png" alt=""
+                  class="rounded"></label>
             <button type="submit" id="novel" name="novel" class="btn btn-outline-primary">Novel</button>
          </i><i class="item-kategori">
-            <label for="sains"><img src="../../assets/icon kategori/Desain_tanpa_judul__2_-removebg-preview (1).png" alt="" class="rounded"></label>
+            <label for="sains"><img src="../../assets/icon kategori/Desain_tanpa_judul__2_-removebg-preview (1).png"
+                  alt="" class="rounded"></label>
             <button type="submit" id="sains" name="sains" class="btn btn-outline-primary">Sains</button>
          </i>
       </form>
@@ -164,18 +176,18 @@ if (isset($_POST["sains"])) {
       <!--Card buku-->
       <div class="layout-card-custom">
          <?php foreach ($buku as $item) : ?>
-            <div class="card" style="width: 15rem;">
-               <img src="../../imgDB/<?= $item["cover"]; ?>" class="card-img-top" alt="coverBuku" height="250px">
-               <div class="card-body">
-                  <h5 class="card-title"><?= $item["judul"]; ?></h5>
-               </div>
-               <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Kategori : <?= $item["kategori"]; ?></li>
-               </ul>
-               <div class="card-body">
-                  <a class="btn btn-success" href="detailBuku.php?id=<?= $item["id_buku"]; ?>">Detail</a>
-               </div>
+         <div class="card" style="width: 15rem;">
+            <img src="../../imgDB/<?= $item["cover"]; ?>" class="card-img-top" alt="coverBuku" height="250px">
+            <div class="card-body">
+               <h5 class="card-title"><?= $item["judul"]; ?></h5>
             </div>
+            <ul class="list-group list-group-flush">
+               <li class="list-group-item">Kategori : <?= $item["kategori"]; ?></li>
+            </ul>
+            <div class="card-body">
+               <a class="btn btn-success" href="detailBuku.php?id=<?= $item["id_buku"]; ?>">Detail</a>
+            </div>
+         </div>
          <?php endforeach; ?>
       </div>
    </div>
@@ -187,7 +199,8 @@ if (isset($_POST["sains"])) {
       </div>
    </footer>
 
-   <script src="../../assets/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+   <script src="../../assets/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
    </script>
 
 </body>
