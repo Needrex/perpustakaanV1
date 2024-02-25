@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Feb 2024 pada 07.45
+-- Waktu pembuatan: 25 Feb 2024 pada 10.26
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -120,6 +120,7 @@ CREATE TABLE `member` (
 
 INSERT INTO `member` (`nisn`, `kode_member`, `nama`, `password`, `jenis_kelamin`, `kelas`, `jurusan`, `no_tlp`, `tgl_pendaftaran`) VALUES
 (987, '006', 'bonangfc', '$2y$10$8o8sf/aYP0jmC1y3K3AkDuKHCwihXe7ivC3G80C67IyuJ1A7ie70K', 'Laki laki', 'XII', 'Desain Gambar Mesin', '123456789', '2024-01-25'),
+(1222, '45', 'sidik man', '$2y$10$mdr.FDrhzxyj5ZVpxGHTF.NQB6JBAwjL5J733pDuL51pjO8cQlfUS', 'Laki laki', 'XII', 'Rekayasa Perangkat Lunak', '0896673487', '2024-02-25'),
 (9726, '444', 'rega', '$2y$10$sRWgDgGgwkWDTZ26NBgNe.yhBUzE.eXLn.0ZHbIfHIQ7N6PtM/G2S', 'Laki laki', 'XII', 'Sistem Informatika Jaringan dan Aplikasi', '0895557349', '2024-02-07');
 
 -- --------------------------------------------------------
@@ -135,15 +136,18 @@ CREATE TABLE `peminjaman` (
   `id_admin` int(50) NOT NULL,
   `tgl_peminjaman` date NOT NULL,
   `tgl_pengembalian` date NOT NULL,
-  `status` enum('ya','tidak') NOT NULL
+  `status` enum('ya','tidak') NOT NULL,
+  `no_tlp` varchar(50) NOT NULL,
+  `harga` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `peminjaman`
 --
 
-INSERT INTO `peminjaman` (`id_peminjaman`, `id_buku`, `nisn`, `id_admin`, `tgl_peminjaman`, `tgl_pengembalian`, `status`) VALUES
-(1, 'Zz01', 9726, 8, '2024-02-19', '2024-02-26', 'ya');
+INSERT INTO `peminjaman` (`id_peminjaman`, `id_buku`, `nisn`, `id_admin`, `tgl_peminjaman`, `tgl_pengembalian`, `status`, `no_tlp`, `harga`) VALUES
+(3, 'ZID0005', 9726, 8, '2024-02-25', '2024-02-28', 'ya', '085266161', 3000),
+(4, 'ZID0005', 1222, 8, '2024-02-25', '2024-03-03', 'tidak', '085266161', 15000);
 
 -- --------------------------------------------------------
 
@@ -225,7 +229,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengembalian`
