@@ -439,3 +439,16 @@ function editPetugas($data, $id)
   mysqli_query($connection, $sql);
   return mysqli_affected_rows($connection);
 }
+
+function editPaket($data, $paket)
+{
+  global $connection;
+
+  $waktu_pengembalian = $data['waktu_pengembalian'];
+  $harga = $data['harga'];
+
+
+  $sql = "UPDATE `paket` SET `waktu_pengembalian`='$waktu_pengembalian',`harga`='$harga' WHERE paket=$paket";
+  mysqli_query($connection, $sql);
+  return mysqli_affected_rows($connection);
+}

@@ -37,7 +37,6 @@ function hitungDenda() {
 
 
 
-
 // Panggil fungsi hitungDenda saat halaman dimuat
 window.onload = function () {
   hitungDenda();

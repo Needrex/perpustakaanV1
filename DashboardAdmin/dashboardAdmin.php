@@ -124,7 +124,7 @@ if (isset($_SESSION['role'])) {
             </div>
             <div class="cardImg">
                <a href="petugas/daftarPetugas.php">
-                  <img src="../assets/dashboardCardMember/admin.png" alt="daftar buku" style="max-width: 100%;"
+                  <img src="../assets/dashboardCardMember/admin.png" alt="daftar buku" style="max-width: 80%;"
                      width="400px">
                </a>
             </div>
