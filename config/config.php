@@ -265,6 +265,8 @@ function pinjamBuku($dataBuku)
   $idAdmin = $dataBuku["id"];
   $tgl_peminjaman = $dataBuku["tgl_peminjaman"];
   $tgl_pengembalian = $dataBuku["tgl_pengembalian"];
+  $harga = $dataBuku["harga"];
+  $no_tlp = $dataBuku["no_tlp"];
   // cek apakah user memiliki denda 
   // $cekDenda = mysqli_query($connection, "SELECT denda FROM pengembalian WHERE nisn = $nisn && denda > 0");
   // if (mysqli_num_rows($cekDenda) > 0) {
@@ -286,7 +288,7 @@ function pinjamBuku($dataBuku)
     return 0;
   }
 
-  $queryPinjam = "INSERT INTO `peminjaman`(`id_peminjaman`, `id_buku`, `nisn`, `id_admin`, `tgl_peminjaman`, `tgl_pengembalian`,`status`) VALUES ('', '$idBuku', $nisn, $idAdmin, '$tgl_peminjaman', '$tgl_pengembalian','tidak')";
+  $queryPinjam = "INSERT INTO `peminjaman`(`id_peminjaman`, `id_buku`, `nisn`, `id_admin`, `tgl_peminjaman`, `tgl_pengembalian`,`status`,`no_tlp`,`harga`) VALUES ('', '$idBuku', $nisn, $idAdmin, '$tgl_peminjaman', '$tgl_pengembalian','tidak','$no_tlp',$harga)";
   mysqli_query($connection, $queryPinjam);
   return mysqli_affected_rows($connection);
 }

@@ -3,34 +3,34 @@ session_start();
 
 //Jika member sudah login, tidak boleh kembali ke halaman login ,kecuali logout
 if (isset($_SESSION["signIn"])) {
-  header("Location: ../../DashboardMember/dashboardMember.php");
-  exit;
+   header("Location: ../../DashboardMember/dashboardMember.php");
+   exit;
 }
 
 require "../../loginSystem/connect.php";
 
 if (isset($_POST["signIn"])) {
 
-  $nama = strtolower($_POST["nama"]);
-  $nisn = $_POST["nisn"];
-  $password = $_POST["password"];
+   // $nama = strtolower($_POST["nama"]);
+   $nisn = $_POST["nisn"];
+   $password = $_POST["password"];
 
 
-  $result = mysqli_query($connect, "SELECT * FROM member WHERE nama = '$nama' AND nisn = $nisn");
+   $result = mysqli_query($connect, "SELECT * FROM member WHERE nisn = $nisn");
 
-  if (mysqli_num_rows($result) === 1) {
-    //cek pw 
-    $pw = mysqli_fetch_assoc($result);
-    if (password_verify($password, $pw["password"])) {
-      // SET SESSION 
-      $_SESSION["signIn"] = true;
-      $_SESSION["member"]["nama"] = $nama;
-      $_SESSION["member"]["nisn"] = $nisn;
-      header("Location: ../../DashboardMember/dashboardMember.php");
-      exit;
-    }
-  }
-  $error = true;
+   if (mysqli_num_rows($result) === 1) {
+      //cek pw 
+      $pw = mysqli_fetch_assoc($result);
+      if (password_verify($password, $pw["password"])) {
+         // SET SESSION 
+         $_SESSION["signIn"] = true;
+         $_SESSION["member"]["nama"] = $pw['nama'];
+         $_SESSION["member"]["nisn"] = $nisn;
+         header("Location: ../../DashboardMember/dashboardMember.php");
+         exit;
+      }
+   }
+   $error = true;
 }
 ?>
 
@@ -64,12 +64,6 @@ if (isset($_POST["signIn"])) {
          <h1 class="pt-5 text-center fw-bold">Sign In</h1>
          <hr />
          <form action="" method="post" class="row g-3 p-4 needs-validation" novalidate>
-            <label for="validationCustom01" class="form-label">Nama Lengkap</label>
-            <div class="input-group mt-0">
-               <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
-               <input type="text" class="form-control" name="nama" id="validationCustom01" required />
-               <div class="invalid-feedback">Masukkan nama anda!</div>
-            </div>
             <label for="validationCustom01" class="form-label">Nisn</label>
             <div class="input-group mt-0">
                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-hashtag"></i></span>
