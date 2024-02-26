@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Feb 2024 pada 10.26
+-- Waktu pembuatan: 26 Feb 2024 pada 03.15
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -126,6 +126,27 @@ INSERT INTO `member` (`nisn`, `kode_member`, `nama`, `password`, `jenis_kelamin`
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `paket`
+--
+
+CREATE TABLE `paket` (
+  `paket` int(5) NOT NULL,
+  `harga` int(50) NOT NULL,
+  `waktu_pengembalian` int(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `paket`
+--
+
+INSERT INTO `paket` (`paket`, `harga`, `waktu_pengembalian`) VALUES
+(1, 1500, 6),
+(2, 1000, 10),
+(3, 500, 15);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `peminjaman`
 --
 
@@ -195,6 +216,12 @@ ALTER TABLE `kategori_buku`
 ALTER TABLE `member`
   ADD PRIMARY KEY (`nisn`),
   ADD UNIQUE KEY `kode_member` (`kode_member`);
+
+--
+-- Indeks untuk tabel `paket`
+--
+ALTER TABLE `paket`
+  ADD PRIMARY KEY (`paket`);
 
 --
 -- Indeks untuk tabel `peminjaman`
